@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroductionScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/UghaScene.unity
+    guid: aaa33deb589dc6a41beaf692b6ad3828
+  - enabled: 1
+    path: Assets/Scenes/MassimoScene.unity
+    guid: 9b68c6f2e78482b44864aefc456acabc
+  - enabled: 1
+    path: Assets/Scenes/EspectroScene.unity
+    guid: b8e6b21355994b940855f2d3144eab9a
   m_configObjects: {}
