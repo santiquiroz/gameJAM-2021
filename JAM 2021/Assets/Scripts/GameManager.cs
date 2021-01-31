@@ -92,6 +92,12 @@ public class GameManager : MonoBehaviour{
 
     }
 
+    public void NextScene(int sceneNumber){
+        user.ultima_escena = sceneNumber;
+        user.ultimo_dialogo = 1;
+        SceneManager.LoadScene(sceneNumber);
+    }
+
     public void LetsStart(){
         ChangeScene(user.ultima_escena);
     }

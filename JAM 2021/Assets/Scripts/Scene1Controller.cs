@@ -185,14 +185,17 @@ public class Scene1Controller : MonoBehaviour {
         }
         isDialogAnimationNotGoingOn= false;
         if(dialogo.decisiones.Count > 0){
+            option1Button.GetComponentInChildren<Text>().text=dialogo.decisiones[0];
+            option2Button.GetComponentInChildren<Text>().text=dialogo.decisiones[1];
             ToogleButtons();
         }
     }
-    private void ToogleFinalButtons(){
-        
-        ugahButton.SetActive(!nextButton.activeInHierarchy);
-        pacoButton.SetActive(!option1Button.activeInHierarchy);
-        massimoButton.SetActive(!option2Button.activeInHierarchy);
+    private void ToogleFinalButtons(){  
+        GameObject.Find("Canvas").GetComponent<Canvas>().AppearNPC(true,true,true,true,true); 
+        nextButton.SetActive(false);
+        ugahButton.SetActive(true);
+        pacoButton.SetActive(true);
+        massimoButton.SetActive(true);
     }
 
     IEnumerator FinalAnimationText(Dialog dialogo){
@@ -208,10 +211,8 @@ public class Scene1Controller : MonoBehaviour {
             yield return new WaitForSeconds(0);
             
         }
-        isDialogAnimationNotGoingOn= false;
-        if(dialogo.decisiones.Count > 0){
-            ToogleFinalButtons();
-        }
+        isDialogAnimationNotGoingOn= false;        
+        ToogleFinalButtons();
     }
 
     public void ResizeFont(int newSize){

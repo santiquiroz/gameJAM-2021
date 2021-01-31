@@ -19,14 +19,11 @@ public class Canvas : MonoBehaviour{
     }
 
 
-    public void AppearNPC(bool ugah, bool paco, bool massimo, bool doctor, bool player, bool[] extra){
+    public void AppearNPC(bool ugah, bool paco, bool massimo, bool doctor, bool player){
         NPC[0].SetActive(ugah);
-        NPC[1].SetActive(ugah);
+        NPC[1].SetActive(paco);
         NPC[2].SetActive(ugah);
         NPC[3].SetActive(ugah);
         NPC[4].SetActive(ugah);
-        for(int i = 0; i < extra.Length; i++){
-            NPC[5 + i].SetActive(extra[i]);
-        }
     }
 }
