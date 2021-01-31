@@ -14,25 +14,76 @@ public class Scene1Controller : MonoBehaviour {
     public Sprite[] faceSprite;
     public GameObject nextButton, option1Button, option2Button;
 
-    public void StartDialog1(Dialog dialogo){
-        dialogText.text = "";
-        nameText.text = dialogo.actor;
-        ChangeMiniatureImage(dialogo.actor);
-        StartCoroutine(AnimationText(dialogo));
-    } 
-    private void StartDialog2(Dialog dialogo){
-        dialogText.text = "";
-        nameText.text = dialogo.actor;
-        ChangeMiniatureImage(dialogo.actor);
-        StartCoroutine(AnimationText(dialogo));
-    } 
-    private void StartDialog3(Dialog dialogo){
-        dialogText.text = "";
-        nameText.text = dialogo.actor;
-        ChangeMiniatureImage(dialogo.actor);
-        StartCoroutine(AnimationText(dialogo));
-    } 
+    //Botones finales
+    public GameObject ugahButton, pacoButton, massimoButton;
 
+    public void StartDialog(Dialog dialogo){
+        switch (dialogo.id)
+        {   
+            case 1:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(AnimationText(dialogo));
+                break;
+            case 2:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(AnimationText(dialogo));
+                break;
+            case 3:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(AnimationText(dialogo));
+                break;
+            case 4:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(AnimationText(dialogo));
+                break;
+            case 5:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(AnimationText(dialogo));
+                break;
+            case 6:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(AnimationText(dialogo));
+                break;
+            case 7:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(AnimationText(dialogo));
+                break;
+            case 8:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(AnimationText(dialogo));
+                break;
+            case 9:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(AnimationText(dialogo));
+                break;
+            case 10:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(FinalAnimationText(dialogo));
+                break;
+            default:
+                break;
+        }
+    }
 
     void Start(){   
         sceneDialogs = new Dialogs();
@@ -43,15 +94,43 @@ public class Scene1Controller : MonoBehaviour {
         if(isDialogFinished){ 
             switch(GameManager.instance.user.ultimo_dialogo){
                 case 1 :
-                    StartDialog1(sceneDialogs.dialogos[0]);
+                    StartDialog(sceneDialogs.dialogos[0]);
                     isDialogFinished=false;
                     break;
                 case 2 :
-                    StartDialog2(sceneDialogs.dialogos[1]);
+                    StartDialog(sceneDialogs.dialogos[1]);
                     isDialogFinished=false;
                     break;
                 case 3 :
-                    StartDialog3(sceneDialogs.dialogos[2]);
+                    StartDialog(sceneDialogs.dialogos[2]);
+                    isDialogFinished=false;
+                    break;
+                case 4 :
+                    StartDialog(sceneDialogs.dialogos[3]);
+                    isDialogFinished=false;
+                    break;
+                case 5 :
+                    StartDialog(sceneDialogs.dialogos[4]);
+                    isDialogFinished=false;
+                    break;
+                case 6 :
+                    StartDialog(sceneDialogs.dialogos[5]);
+                    isDialogFinished=false;
+                    break;
+                case 7 :
+                    StartDialog(sceneDialogs.dialogos[6]);
+                    isDialogFinished=false;
+                    break;
+                case 8 :
+                    StartDialog(sceneDialogs.dialogos[7]);
+                    isDialogFinished=false;
+                    break;
+                case 9 :
+                    StartDialog(sceneDialogs.dialogos[8]);
+                    isDialogFinished=false;
+                    break;
+                case 10 :
+                    StartDialog(sceneDialogs.dialogos[9]);
                     isDialogFinished=false;
                     break;
                 default:
@@ -60,8 +139,14 @@ public class Scene1Controller : MonoBehaviour {
         }
     }
 
-    private void GoToNextDialog(int i){
-        GameManager.instance.user.ultimo_dialogo += i;
+    private void GoToNextDialog(int decision){
+              
+        var currentDialog = sceneDialogs.dialogos.FindAll(dialog => dialog.id == GameManager.instance.user.ultimo_dialogo)[0];
+        int nexDialogId =  currentDialog.siguiente[decision -1];
+
+        Debug.Log("siguiente" + nexDialogId);
+
+        GameManager.instance.user.ultimo_dialogo = nexDialogId;
         isDialogFinished=true;
     }
 
@@ -80,16 +165,6 @@ public class Scene1Controller : MonoBehaviour {
         }
     }
     private void ToogleButtons(){
-        /*if(nextButton.activeInHierarchy){
-            nextButton.SetActive(false);
-            option1Button.SetActive(true);
-            option2Button.SetActive(true);
-        }
-        else{
-            nextButton.SetActive(true);
-            option1Button.SetActive(false);
-            option2Button.SetActive(false);
-        }*/
         nextButton.SetActive(!nextButton.activeInHierarchy);
         option1Button.SetActive(!option1Button.activeInHierarchy);
         option2Button.SetActive(!option2Button.activeInHierarchy);
@@ -111,6 +186,31 @@ public class Scene1Controller : MonoBehaviour {
         isDialogAnimationNotGoingOn= false;
         if(dialogo.decisiones.Count > 0){
             ToogleButtons();
+        }
+    }
+    private void ToogleFinalButtons(){
+        
+        ugahButton.SetActive(!nextButton.activeInHierarchy);
+        pacoButton.SetActive(!option1Button.activeInHierarchy);
+        massimoButton.SetActive(!option2Button.activeInHierarchy);
+    }
+
+    IEnumerator FinalAnimationText(Dialog dialogo){
+        string text = dialogo.texto;
+        float velocity = dialogo.velocidad;
+        isDialogAnimationNotGoingOn = true;
+        foreach(char Character in text){
+            dialogText.text = dialogText.text + Character;
+            /* yield return new WaitForSeconds(1 * Mathf.Abs(Mathf.Log(velocity / 2))); */
+            if(isDialogAnimationNotGoingOn){
+                yield return new WaitForSeconds(0.1f * velocity );
+            }
+            yield return new WaitForSeconds(0);
+            
+        }
+        isDialogAnimationNotGoingOn= false;
+        if(dialogo.decisiones.Count > 0){
+            ToogleFinalButtons();
         }
     }
 
