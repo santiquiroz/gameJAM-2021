@@ -1,0 +1,35 @@
+{
+    "dialogos": [
+        {
+            "id": 1,
+            "escena": 1,
+            "dialogo:": [
+                "Buenos dias dormilón.",
+                "como te sientes?"
+            ],
+            "actor": "doctor",
+            "velocidad": 1,
+            "musica": "a"
+        },
+        {
+            "id": 2,
+            "escena": 1,
+            "dialogo:": [
+                "Me alegra!"
+            ],
+            "actor": "doctor",
+            "velocidad": 1,
+            "musica": "a"
+        },
+        {
+            "id": 3,
+            "escena": 1,
+            "dialogo:": [
+                "Quien soy yo?"
+            ],
+            "actor": "doctor",
+            "velocidad": 1,
+            "musica": "b"
+        }
+    ]
+}

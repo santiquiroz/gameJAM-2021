@@ -1,0 +1,29 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "ultima_escena":1,
+            "ultimo_dialogo": 1,
+            "decisiones":[],
+            "finales":[]
+        }
+    ],
+    "sistema": {
+        "configuracion":{
+            "volumen": 100
+        },
+        "creditos":{
+            "area":[
+                {
+                    "nombre":"Arte",
+                    "miembros":[
+                        {
+                            "nombre": "Viviana",
+                            "cargo": "diseño"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
