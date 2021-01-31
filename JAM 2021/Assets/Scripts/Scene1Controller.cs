@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class Scene1Controller : MonoBehaviour{   
     public Dialogs sceneDialogs;
-    
-    private bool isDialogAnimationNotGoingIn = true;
+    private bool isDialogFinished = true;
+    private bool isDialogAnimationNotGoingOn = false;
+
     
 
     //Elementos de la UI
@@ -26,11 +27,11 @@ public class Scene1Controller : MonoBehaviour{
     }
 
     void Update(){
-        if(isDialogAnimationNotGoingIn){ 
+        if(isDialogFinished){ 
             switch (GameManager.instance.user.ultimo_dialogo){
                 case 1 :
                     StartDialog1(sceneDialogs.dialogos[0]);
-                    isDialogAnimationNotGoingIn=false;
+                    isDialogFinished=false;
                     break;                    
                 default:
                     break;
@@ -38,15 +39,27 @@ public class Scene1Controller : MonoBehaviour{
         }
     }
 
+    void nextButtonListener(){
+        if(isDialogAnimationNotGoingOn){
+            isDialogAnimationNotGoingOn=false;
+        }
+        else{
+            isDialogFinished=true;
+        }
+    }
+
     IEnumerator AnimationText(string text, float velocity){
-        Debug.Log("Inicia");
-        Debug.Log(text);
-        Debug.Log(velocity);
+        isDialogAnimationNotGoingOn = true;
         foreach(char Character in text){
             dialogText.text = dialogText.text + Character;
             /* yield return new WaitForSeconds(1 * Mathf.Abs(Mathf.Log(velocity / 2))); */
-            yield return new WaitForSeconds(0.1f * velocity );
+            if(isDialogAnimationNotGoingOn){
+                yield return new WaitForSeconds(0.1f * velocity );
+            }
+            yield return new WaitForSeconds(0);
+            
         }
+        isDialogAnimationNotGoingOn= false;
     }
 
     public void ResizeFont(int newSize){
