@@ -3,29 +3,342 @@
         {
             "id": 1,
             "escena": 1,
-            "texto": "Buenos dias dormilón. \n como te sientes?",
+            "texto": "Buenos dias dormilón. \n¿Cómo te sientes?",
             "actor": "Doctor",
             "velocidad": 1.0,
             "musica": "a",
-            "decisiones": ["Estoy bien","¿Quién es usted?"]
+            "decisiones": ["Estoy bien","¿Quién es usted?"],
+            "siguiente":[2,3]
         },
         {
             "id": 2,
             "escena": 1,
-            "texto": "Me alegra!",
+            "texto": "¡Me alegra!",
             "actor": "Doctor",
             "velocidad": 1.0,
             "musica": "a",
-            "decisiones": []
+            "decisiones": [],
+            "siguiente":[4]
         },
         {
             "id": 3,
             "escena": 1,
-            "texto": "Quien soy yo?",
+            "texto": "¿Quién soy yo?",
             "actor": "Doctor",
             "velocidad": 1.0,
             "musica": "b",
-            "decisiones": []
+            "decisiones": [],
+            "siguiente":[4]
+        },
+        {
+            "id": 4,
+            "escena": 1,
+            "texto": "Tengo una pregunta…",
+            "actor": "Doctor",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[5]
+        },
+        {
+            "id": 5,
+            "escena": 1,
+            "texto": "¿Quién eres tú?",
+            "actor": "Doctor",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": ["Ah, no sé.","No lo recuerdo…"],
+            "siguiente":[6,6]
+        },
+        {
+            "id": 6,
+            "escena": 1,
+            "texto": "¡Oh! Ya veo... \nBueno, quizá esto te haga recordar \nLlegaron 3 personas, dicen que te conocen.",
+            "actor": "Doctor",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[7]
+        },
+        {
+            "id": 7,
+            "escena": 1,
+            "texto": "¡Ugh!",
+            "actor": "Ugah",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[8]
+        },
+        {
+            "id": 8,
+            "escena": 1,
+            "texto": "Amigo…",
+            "actor": "Massimo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[9]
+        },
+        {
+            "id": 9,
+            "escena": 1,
+            "texto": "¡Ah! Ahí estás.",
+            "actor": "Paco",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[10]
+        },
+        {
+            "id": 10,
+            "escena": 1,
+            "texto": "Sin embargo… \nEs raro, cada uno dice cosas diferentes sobre tí. \nBueno, si de algo sirve, puedes hablar con ellos y ver si recuerdas algo.",
+            "actor": "Doctor",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[]
+        },
+        {
+            "id": 1,
+            "escena": 2,
+            "texto": "¡Uuuuuu!",
+            "actor": "Ugah",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": ["Hola", "¿Uuu?"],
+            "siguiente":[2,2]
+        },
+        {
+            "id": 2,
+            "escena": 2,
+            "texto": "¿Ugh recordar Ugha? \nUgha ser niki niki de Ugh.",
+            "actor": "Ugah",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": ["¿Niki?", "No entiendo…"],
+            "siguiente":[3,4]
+        },
+        {
+            "id": 3,
+            "escena": 2,
+            "texto": "Ugha y Ugh niki niki. \nUgha y Ugh tener mini Ugh. \nMini Ugh crecer y ser nuevo Ugh.",
+            "actor": "Ugah",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[5]
+        },
+        {
+            "id": 4,
+            "escena": 2,
+            "texto": "Ugh comer caimán. \nCaimán comer Ugh. \nUgh manada encontrar Ugha manada. \nUgh regalar huevo a Ugha. \nUgha querer a Ugh. \nPero antes que Ugha y Ugh niki niki. \nMamá de huevo querer comer Ugh. \nUgh escapar. \nUgh saltar. \nUgh Caer.",
+            "actor": "Ugah",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[5]
+        },
+        {
+            "id": 5,
+            "escena": 2,
+            "texto": "Ugh olvidar…",
+            "actor": "Yo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": ["¿Yo ser Ugh?", "¿Dónde está Ugh?"],
+            "siguiente":[6,7]
+        },
+        {
+            "id": 6,
+            "escena": 2,
+            "texto": "¡Uuuu! \nUgh volver con Ugha. \nUgha y Ugh niki niki. \n¡Ugha y Ugh tener mini Ugh!",
+            "actor": "Ugah",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[]
+        },
+        {
+            "id": 7,
+            "escena": 2,
+            "texto": "Ugh aquí. \nUgh ser Ugh. \nUgh volver con Ugha. \nUgha y Ugh niki niki. \n¡Ugha y Ugh tener mini Ugh!",
+            "actor": "Ugah",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[]
+        },
+        {
+            "id": 1,
+            "escena": 3,
+            "texto": "Amigo… Hermano…",
+            "actor": "Massimo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[2]
+        },
+        {
+            "id": 2,
+            "escena": 3,
+            "texto": "¡¿Qué te hicieron?!",
+            "actor": "Yo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": ["¿Somos hermanos?", "¿Quién eres?"],
+            "siguiente":[3,4]
+        },
+        {
+            "id": 3,
+            "escena": 3,
+            "texto": "Bueno… \nSi ser hermanos significa almorzar pizza… \n..Recoger la pasta del negocio … \n...Y encender a nuestros enemigos a bala en una sola tarde \nEntonces sí, somos hermano JAJAJA \n¡Ya sabes cómo es el negocio, socio! \n¡PIZZA, PASTA, BALA! \n… \nPerdón… Me dejé llevar",
+            "actor": "Massimo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[5]
+        },
+        {
+            "id": 4,
+            "escena": 3,
+            "texto": "¿Quién soy yo? \n¡Yo soy Massimo Abelardo! /nJefe de jefes de esta ciudad \nSoy tu amigo y gran colega.",
+            "actor": "Massimo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[5]
+        },
+        {
+            "id": 5,
+            "escena": 3,
+            "texto": "...",
+            "actor": "Yo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": ["Lo siento, no recuerdo...", "Aún no entiendo"],
+            "siguiente":[6, 6]
+        },
+        {
+            "id": 6,
+            "escena": 3,
+            "texto": "Ya veo… \nDéjame contarte una historia",
+            "actor": "Massimo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[7]
+        },
+        {
+            "id": 7,
+            "escena": 3,
+            "texto": "Hace muchos años, unos niños conocieron el mundo del crimen. \nEllos crecieron inspirados por el lujo y la riqueza. \nSe convierten en guardaespaldas. \ny no tardaron en ascender hasta ser respetados gangster de su ciudad. \nVivieron la buena vida, gozaron de la fama, el dinero, y lindas señoritas. \nPero no todo fue color de rosa. \nUno de nuestros más cercanos socios, amigos, hermanos… \n¡Nos traicionó! \nFue en una emboscada de la policía que te ví por última vez. \nTe golpearon la cabeza. \nEsos malditos te atraparon antes de que pudiera ayudarte \n…",
+            "actor": "Massimo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[8]
+        },
+        {
+            "id": 8,
+            "escena": 3,
+            "texto": "Pero ahora… Te he encontrado. \nPodremos acabar junto con el maldito que se atravesó en nuestro camino. \n¡Rápido, hermano! \nSalgamos de este lugar y recuperemos nuestro trono. \n¿Qué dices? \nSerá como en los viejos tiempos. \n¡Pizza, pasta, bala!",
+            "actor": "Massimo",
+            "velocidad": 1.0,
+            "musica": "b",
+            "decisiones": [],
+            "siguiente":[]
+        },
+        {
+            "id": 1,
+            "escena": 4,
+            "texto": "¡Hola! ¿C-cómo estás? \nDisculpa si parezco nervioso...",
+            "actor": "Paco",
+            "velocidad": 1.0,
+            "musica": "c",
+            "decisiones": [],
+            "siguiente":[2]
+        },
+        {
+            "id": 2,
+            "escena": 4,
+            "texto": "Es que soy admirador tuyo",
+            "actor": "Yo",
+            "velocidad": 1.0,
+            "musica": "c",
+            "decisiones": ["¿Admirador mío?","¡Ay, un esqueleto!"],
+            "siguiente":[3,4]
+        },
+        {
+            "id": 3,
+            "escena": 4,
+            "texto": "¡Sí! Me he visto todas las películas en las que has trabajado. \nTu trabajo es asombroso. \nLa manera en que realizas acrobacias es simplemente sensacional.",
+            "actor": "Paco",
+            "velocidad": 1.0,
+            "musica": "c",
+            "decisiones": [],
+            "siguiente":[5] 
+        },
+        {
+            "id": 4,
+            "escena": 4,
+            "texto": "Ah sí, tranquilo \nEn un rato te acostumbras a verme \nEs como en esa pelicula “The Walking Fred” \nDonde peleas con un ejército de muertos y se les ven los huesos \nAlgo así- ¡Aunque bueno! Yo soy chevere \nNo voy a comer tu carne, soy vegano \nY si no lo fuera, tampoco podría hacerlo de todos modos...",
+            "actor": "Paco",
+            "velocidad": 1.0,
+            "musica": "c",
+            "decisiones": [],
+            "siguiente":[5]
+        },
+        {
+            "id": 5,
+            "escena": 4,
+            "texto": "...",
+            "actor": "Yo",
+            "velocidad": 1.0,
+            "musica": "c",
+            "decisiones": ["No estoy entendiendo...","¿A qué te refieres?"],
+            "siguiente":[6,6]
+        },
+        {
+            "id": 6,
+            "escena": 4,
+            "texto": "Oh… Quizás esté yendo muy rápido. \nMe presento, me llamo Paco. \nSoy algo como lo que llaman “La muerte”. \nMe encargo de llevar las almas al más allá. \nClaro, aún no me he graduado, apenas voy en las prácticas. \nHoy me dejaron recolectar un par de almas para cubrir la cuota de la semana y tuve la gran fortuna de que fueras tú una de ellas. \nQuién habría pensado que mi actor de riesgo favorito moriría el mismo día en el que trabajaba… \n¿Sigues sin recordar nada? \nEstá bien, déjame contarte algo.",
+            "actor": "Paco",
+            "velocidad": 1.0,
+            "musica": "c",
+            "decisiones": [],
+            "siguiente":[7]
+        },
+        {
+            "id": 7,
+            "escena": 4,
+            "texto": "Detrás de cada gran actor de cine existe un gran doble de riesgo que hizo sus escenas peligrosas. \nEsa era la vida del doble de Pratt Bit. \nRealizando acrobacias y movimientos extremos. \nLastimosamente, sus días de acción terminaron en el set. \nEn una escena para su nueva película, el doble dejó que varios extras le dispararan con armas de juguete. \nNadie supo por qué había un arma real entre ellas. Y falleció al instante.",
+            "actor": "Paco",
+            "velocidad": 1.0,
+            "musica": "c",
+            "decisiones": [],
+            "siguiente":[8]
+        },
+        {
+            "id": 8,
+            "escena": 4,
+            "texto": "Esa es tu historia, la historia de mi actor de riesgo favorito. \nVen conmigo, y te llevaré a ver tus mejores películas en el más allá.",
+            "actor": "Paco",
+            "velocidad": 1.0,
+            "musica": "c",
+            "decisiones": [],
+            "siguiente":[]
+        },
+        {
+            "id": 1,
+            "escena": 5,
+            "texto": "",
+            "actor": "Yo",
+            "velocidad": 1.0,
+            "musica": "d",
+            "decisiones": [],
+            "siguiente":[]
         }
     ]
 }
