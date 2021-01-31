@@ -328,17 +328,64 @@
             "velocidad": 1.0,
             "musica": "c",
             "decisiones": [],
-            "siguiente":[]
+            "siguiente":[9]
         },
         {
-            "id": 1,
-            "escena": 5,
-            "texto": "",
+            "id": 9,
+            "escena": 4,
+            "texto": "¿A quién le crees?",
             "actor": "Yo",
             "velocidad": 1.0,
             "musica": "d",
             "decisiones": [],
             "siguiente":[]
-        }
+        },
+        {
+            "id": 1,
+            "escena": 5,
+            "texto": "Lo recordaste, eres un cavernícola ,Ugh irse con Ugha, \nUgh y Ugha niki niki \nUgh y Ugha tener mini Ugh",
+            "actor": "Yo",
+            "velocidad": 1.0,
+            "musica": "d",
+            "decisiones": [],
+            "siguiente":[]
+        },
+        {
+            "id": 1,
+            "escena": 6,
+            "texto": "Lo recordaste, eres un gangster \nSales con Massimo fuera del hospital \nCaminan hacia un Callejón!!!",
+            "actor": "Yo",
+            "velocidad": 1.0,
+            "musica": "d",
+            "decisiones": [],
+            "siguiente":[]
+        }, 
+        {
+            "id": 2,
+            "escena": 6,
+            "texto": "Fue problemático saber que quedaste vivo \nTuve que buscarte por toda la ciudad \nAl fin acabaré con esto…",             "actor": "Yo",
+            "velocidad": 1.0,
+            "musica": "d",
+            "decisiones": [],
+            "siguiente":[]
+        },
+        {
+            "id": 2,
+            "escena": 6,
+            "texto": "Los hermanos Pizza, Pasta, Bala se separaron \nY ya sabes cómo es el negocio, socio \nLa vida es un ciclo \nY lo que no sirve ya no lo reciclo",
+            "velocidad": 1.0,
+            "musica": "d",
+            "decisiones": [],
+            "siguiente":[]
+        },
+        {
+            "id": 1,
+            "escena": 7,
+            "texto": "Te diste cuenta, ya estás muerto \nCaminas hacia la puerta con el Espectro \nTe sientes muy tranquilo \nAscendiste al más allá",
+             "velocidad": 1.0,
+            "musica": "d",
+            "decisiones": [],
+            "siguiente":[]
+        }        
     ]
 }
