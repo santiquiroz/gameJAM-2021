@@ -13,7 +13,7 @@ public class Scene1Controller : MonoBehaviour{
     //Elementos de la UI
     public Text nameText, dialogText, button1OptionText, button2OptionText;
     public Image faceImage;
-    public SpriteRenderer[] faceSprite;
+    public Sprite[] faceSprite;
 
     public void StartDialog1(Dialog dialogo){
         dialogText.text = "";
