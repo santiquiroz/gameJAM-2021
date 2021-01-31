@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Scene1Controller : MonoBehaviour{   
+public class Scene1Controller : MonoBehaviour {
     public Dialogs sceneDialogs;
     private bool isDialogFinished = true;
     private bool isDialogAnimationNotGoingOn = false;
 
-    
+
 
     //Elementos de la UI
     public Text nameText, dialogText, button1OptionText, button2OptionText;
@@ -19,16 +19,19 @@ public class Scene1Controller : MonoBehaviour{
     public void StartDialog1(Dialog dialogo){
         dialogText.text = "";
         nameText.text = dialogo.actor;
+        ChangeMiniatureImage(dialogo.actor);
         StartCoroutine(AnimationText(dialogo));
     } 
-     public void StartDialog2(Dialog dialogo){
+    private void StartDialog2(Dialog dialogo){
         dialogText.text = "";
         nameText.text = dialogo.actor;
+        ChangeMiniatureImage(dialogo.actor);
         StartCoroutine(AnimationText(dialogo));
     } 
-    public void StartDialog3(Dialog dialogo){
+    private void StartDialog3(Dialog dialogo){
         dialogText.text = "";
         nameText.text = dialogo.actor;
+        ChangeMiniatureImage(dialogo.actor);
         StartCoroutine(AnimationText(dialogo));
     } 
 
@@ -40,7 +43,7 @@ public class Scene1Controller : MonoBehaviour{
 
     void Update(){
         if(isDialogFinished){ 
-            switch (GameManager.instance.user.ultimo_dialogo){
+            switch(GameManager.instance.user.ultimo_dialogo){
                 case 1 :
                     StartDialog1(sceneDialogs.dialogos[0]);
                     isDialogFinished=false;
@@ -59,36 +62,39 @@ public class Scene1Controller : MonoBehaviour{
         }
     }
 
-    void goToNextDialog(int i){
+    private void GoToNextDialog(int i){
         GameManager.instance.user.ultimo_dialogo += i;
         isDialogFinished=true;
     }
 
-    public void makeDesition (int desition) {
+    public void MakeDesition (int desition) {
         GameManager.instance.user.decisiones.Add(1.ToString()+'-'+GameManager.instance.user.ultimo_dialogo.ToString()+'-'+desition.ToString());
-        goToNextDialog(desition);
-        toogleButtons();
+        GoToNextDialog(desition);
+        ToogleButtons();
     }
 
-    public void nextButtonListener(){
+    public void NextButtonListener(){
         if(isDialogAnimationNotGoingOn){
             isDialogAnimationNotGoingOn=false;
         }
         else{
-            goToNextDialog(1);
+            GoToNextDialog(1);
         }
     }
-    void toogleButtons(){
-        if(nextButton.activeInHierarchy){
-             nextButton.SetActive(false);
-             option1Button.SetActive(true);
+    private void ToogleButtons(){
+        /*if(nextButton.activeInHierarchy){
+            nextButton.SetActive(false);
+            option1Button.SetActive(true);
             option2Button.SetActive(true);
         }
         else{
-             nextButton.SetActive(true);
-             option1Button.SetActive(false);
+            nextButton.SetActive(true);
+            option1Button.SetActive(false);
             option2Button.SetActive(false);
-        }
+        }*/
+        nextButton.SetActive(!nextButton.activeInHierarchy);
+        option1Button.SetActive(!option1Button.activeInHierarchy);
+        option2Button.SetActive(!option2Button.activeInHierarchy);
     }
 
     IEnumerator AnimationText(Dialog dialogo){
@@ -106,7 +112,7 @@ public class Scene1Controller : MonoBehaviour{
         }
         isDialogAnimationNotGoingOn= false;
         if(dialogo.decisiones.Count > 0){
-            toogleButtons();
+            ToogleButtons();
         }
     }
 
@@ -114,5 +120,17 @@ public class Scene1Controller : MonoBehaviour{
         dialogText.fontSize = newSize;
         button1OptionText.fontSize = newSize;
         button2OptionText.fontSize = newSize;
+    }
+
+    private void ChangeMiniatureImage(string actorName){
+        if(actorName == "Ugah") faceImage.sprite = faceSprite[0];
+        else if(actorName == "Paco") faceImage.sprite = faceSprite[1];
+        else if(actorName == "Massimo") faceImage.sprite = faceSprite[2];
+        else if(actorName == "Doctor") faceImage.sprite = faceSprite[3];
+        else faceImage.sprite = null;
+    }
+
+    public void Restart(){
+
     }
 }

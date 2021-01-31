@@ -10,4 +10,10 @@ public class Canvas : MonoBehaviour{
             if(child.GetComponent<CanvaslSizeAdapter>() != null) child.GetComponent<CanvaslSizeAdapter>().ReSize();
         }
     }
+
+    public void MenuPause(GameObject obj){
+        obj.SetActive(!obj.activeInHierarchy);
+        if(obj.name == "MenuPanel") Time.timeScale = 1 - Time.timeScale;
+    }
+
 }

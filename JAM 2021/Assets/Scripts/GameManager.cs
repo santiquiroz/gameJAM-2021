@@ -47,10 +47,7 @@ public class Dialogs {
 
 public class GameManager : MonoBehaviour{
     public static GameManager instance;
- 
-    // make sure the constructor is private, so it can only be instantiated here
-    private GameManager() {
-    }
+
     public SystemClass system;
     public User user;
 
