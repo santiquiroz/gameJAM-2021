@@ -181,7 +181,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 02592362f207df448bf1274ccedafff1, type: 3}
+    m_Font: {fileID: 12800000, guid: 6aabebd486f911540b943ddb4a5d9e80, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -435,6 +435,7 @@ MonoBehaviour:
   factorX: 1
   factorY: 1
   originalPosition: {x: 0, y: 0, z: 0}
+  sizeFont: 0
 --- !u!1 &943645655
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,6 +757,7 @@ MonoBehaviour:
   factorX: 0.7453416
   factorY: 0.09937888
   originalPosition: {x: 0, y: 5, z: 0}
+  sizeFont: 0
 --- !u!114 &2058270574
 MonoBehaviour:
   m_ObjectHideFlags: 0

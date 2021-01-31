@@ -6,12 +6,13 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RectTransform))]
 public class CanvaslSizeAdapter : MonoBehaviour{
 
-    // Se definen el objeto padre y un vector que definirá las medidas (Ancho y alto) 
+    // Se definen el objeto padre y un vector que definirï¿½ las medidas (Ancho y alto) 
     // del objeto con sus repectivos factores de escala.
     public GameObject parent;
     private Vector2 sizeObject;
     public float factorX, factorY;
     public Vector3 originalPosition;
+    public int sizeFont;
 
     float Signo(float number){
         if(number != 0) return number / Mathf.Abs(number);
@@ -29,5 +30,7 @@ public class CanvaslSizeAdapter : MonoBehaviour{
                 child.GetComponent<CanvaslSizeAdapter>().ReSize();
             }
         }
+        if(this.gameObject.name == "PanelText") GameObject.Find("Player").GetComponent<Scene1Controller>().ResizeFont(
+            Mathf.RoundToInt((sizeObject.x / 224) * (sizeObject.y / 121) * 16));
     }
 }

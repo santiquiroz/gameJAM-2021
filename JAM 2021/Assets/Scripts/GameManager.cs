@@ -33,7 +33,7 @@ public class SystemClass {
 public class Dialog {
     public int id;
     public int escena;
-    public List<string> texto;
+    public string texto;
     public string actor;
     public float velocidad;
     public string musica;

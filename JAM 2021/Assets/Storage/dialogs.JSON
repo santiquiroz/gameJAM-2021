@@ -3,31 +3,24 @@
         {
             "id": 1,
             "escena": 1,
-            "texto:": [
-                "Buenos dias dormilón.",
-                "como te sientes?"
-            ],
-            "actor": "doctor",
+            "texto": "Buenos dias dormilón. \n como te sientes?",
+            "actor": "Doctor",
             "velocidad": 1.0,
             "musica": "a"
         },
         {
             "id": 2,
             "escena": 1,
-            "texto:": [
-                "Me alegra!"
-            ],
-            "actor": "doctor",
+            "texto": "Me alegra!",
+            "actor": "Doctor",
             "velocidad": 1.0,
             "musica": "a"
         },
         {
             "id": 3,
             "escena": 1,
-            "texto:": [
-                "Quien soy yo?"
-            ],
-            "actor": "doctor",
+            "texto": "Quien soy yo?",
+            "actor": "Doctor",
             "velocidad": 1.0,
             "musica": "b"
         }
