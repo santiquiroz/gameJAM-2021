@@ -29,49 +29,56 @@ public class SystemClass {
     public SystemData sistema;
 }
 
+[System.Serializable]
+public class Dialog {
+    public List<string> dialogo;
+}
+
+[System.Serializable]
+public class Dialogs {
+    public List<Dialog> dialogos;
+}
+
 
 
 public class GameManager : MonoBehaviour{
     public SystemClass system;
     public User user;
 
+    public Dialogs dialogs;
+    public Dialog dialog;
+
     public string ReadFromFile (string fileName) {
         string path= fileName;
             using (StreamReader reader = new StreamReader(path)){
-                /* string json = reader.ReadEnd(); */
                 string json = "";
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {   
                     json = json + line;
                 }
-                /* string json = reader.ReadAllText(); */
                 return json;
             }
             return "" ;
         }
+
+    public void Save(){
+
+    }
         
+    void LoadData (){
+        string aux = this.ReadFromFile(Application.dataPath+"/Storage/system.JSON");
+        system = JsonUtility.FromJson<SystemClass>(aux);
+        user=system.usuarios[0];
+
+        //en el futuro implemetar que se pueda cargar varios usuarios y que los dialogos se carguen solo desde el iicio de la escena
+        aux = this.ReadFromFile(Application.dataPath+"/Storage/dialogs.JSON");
+        dialogs = JsonUtility.FromJson<Dialogs>(aux);
+    }
 
     void Start(){
         DontDestroyOnLoad(this.gameObject);
-
-        /* string systemJsonCrudo = File.ReadAllText(Application.dataPath +"/Storage/system.JSON");
-        system = JsonUtility.FromJson<SystemClass>(systemJsonCrudo); */
-        string aux = this.ReadFromFile(Application.dataPath+"/Storage/system.JSON");
-        Debug.Log(aux);
-        system = new SystemClass();
-        system = JsonUtility.FromJson<SystemClass>(aux);
-        /* JsonUtility.FromJsonOverwrite(aux,system); */
-        /* foreach (User user in system.usuarios)
-        {
-            Debug.Log("Found user: " + user.id + " " + user.ultima_escena);
-        } */
-        Debug.Log(system);
-        Debug.Log("Volume:" + system.sistema.configuracion.volumen);
-        Debug.Log("Ultimo dialogo user: " + system.usuarios[0].ultimo_dialogo);
-
-        user=system.usuarios[0];
-        
+        LoadData();        
 
     }
 

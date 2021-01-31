@@ -3,7 +3,7 @@
         {
             "id": 1,
             "escena": 1,
-            "dialogo:": [
+            "texto:": [
                 "Buenos dias dormilón.",
                 "como te sientes?"
             ],
@@ -14,7 +14,7 @@
         {
             "id": 2,
             "escena": 1,
-            "dialogo:": [
+            "texto:": [
                 "Me alegra!"
             ],
             "actor": "doctor",
@@ -24,7 +24,7 @@
         {
             "id": 3,
             "escena": 1,
-            "dialogo:": [
+            "texto:": [
                 "Quien soy yo?"
             ],
             "actor": "doctor",
