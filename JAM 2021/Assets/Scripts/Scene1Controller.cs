@@ -8,8 +8,6 @@ public class Scene1Controller : MonoBehaviour {
     private bool isDialogFinished = true;
     private bool isDialogAnimationNotGoingOn = false;
 
-
-
     //Elementos de la UI
     public Text nameText, dialogText, button1OptionText, button2OptionText;
     public Image faceImage;
@@ -128,9 +126,5 @@ public class Scene1Controller : MonoBehaviour {
         else if(actorName == "Massimo") faceImage.sprite = faceSprite[2];
         else if(actorName == "Doctor") faceImage.sprite = faceSprite[3];
         else faceImage.sprite = null;
-    }
-
-    public void Restart(){
-
     }
 }
