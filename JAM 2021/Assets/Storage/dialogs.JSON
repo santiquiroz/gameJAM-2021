@@ -6,7 +6,8 @@
             "texto": "Buenos dias dormilón. \n como te sientes?",
             "actor": "Doctor",
             "velocidad": 1.0,
-            "musica": "a"
+            "musica": "a",
+            "decisiones": ["Estoy bien","¿Quién es usted?"]
         },
         {
             "id": 2,
@@ -14,7 +15,8 @@
             "texto": "Me alegra!",
             "actor": "Doctor",
             "velocidad": 1.0,
-            "musica": "a"
+            "musica": "a",
+            "decisiones": []
         },
         {
             "id": 3,
@@ -22,7 +24,8 @@
             "texto": "Quien soy yo?",
             "actor": "Doctor",
             "velocidad": 1.0,
-            "musica": "b"
+            "musica": "b",
+            "decisiones": []
         }
     ]
 }

@@ -11,19 +11,6 @@
     "sistema": {
         "configuracion":{
             "volumen": 100
-        },
-        "creditos":{
-            "area":[
-                {
-                    "nombre":"Arte",
-                    "miembros":[
-                        {
-                            "nombre": "Viviana",
-                            "cargo": "diseño"
-                        }
-                    ]
-                }
-            ]
         }
     }
 }

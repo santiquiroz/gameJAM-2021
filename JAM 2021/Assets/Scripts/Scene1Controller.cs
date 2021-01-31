@@ -14,17 +14,24 @@ public class Scene1Controller : MonoBehaviour{
     public Text nameText, dialogText, button1OptionText, button2OptionText;
     public Image faceImage;
     public Sprite[] faceSprite;
+    public GameObject nextButton, option1Button, option2Button;
 
     public void StartDialog1(Dialog dialogo){
         dialogText.text = "";
         nameText.text = dialogo.actor;
-        StartCoroutine(AnimationText(dialogo.texto, dialogo.velocidad));
+        StartCoroutine(AnimationText(dialogo));
     } 
      public void StartDialog2(Dialog dialogo){
         dialogText.text = "";
         nameText.text = dialogo.actor;
-        StartCoroutine(AnimationText(dialogo.texto, dialogo.velocidad));
+        StartCoroutine(AnimationText(dialogo));
     } 
+    public void StartDialog3(Dialog dialogo){
+        dialogText.text = "";
+        nameText.text = dialogo.actor;
+        StartCoroutine(AnimationText(dialogo));
+    } 
+
 
     void Start(){   
         sceneDialogs = new Dialogs();
@@ -42,15 +49,25 @@ public class Scene1Controller : MonoBehaviour{
                     StartDialog2(sceneDialogs.dialogos[1]);
                     isDialogFinished=false;
                     break;
+                case 3 :
+                    StartDialog3(sceneDialogs.dialogos[2]);
+                    isDialogFinished=false;
+                    break;
                 default:
                     break;
             }
         }
     }
 
-    void goToNextDialog(){
-        GameManager.instance.user.ultimo_dialogo ++;
+    void goToNextDialog(int i){
+        GameManager.instance.user.ultimo_dialogo += i;
         isDialogFinished=true;
+    }
+
+    public void makeDesition (int desition) {
+        GameManager.instance.user.decisiones.Add(1.ToString()+'-'+GameManager.instance.user.ultimo_dialogo.ToString()+'-'+desition.ToString());
+        goToNextDialog(desition);
+        toogleButtons();
     }
 
     public void nextButtonListener(){
@@ -58,11 +75,25 @@ public class Scene1Controller : MonoBehaviour{
             isDialogAnimationNotGoingOn=false;
         }
         else{
-            goToNextDialog();
+            goToNextDialog(1);
+        }
+    }
+    void toogleButtons(){
+        if(nextButton.activeInHierarchy){
+             nextButton.SetActive(false);
+             option1Button.SetActive(true);
+            option2Button.SetActive(true);
+        }
+        else{
+             nextButton.SetActive(true);
+             option1Button.SetActive(false);
+            option2Button.SetActive(false);
         }
     }
 
-    IEnumerator AnimationText(string text, float velocity){
+    IEnumerator AnimationText(Dialog dialogo){
+        string text = dialogo.texto;
+        float velocity = dialogo.velocidad;
         isDialogAnimationNotGoingOn = true;
         foreach(char Character in text){
             dialogText.text = dialogText.text + Character;
@@ -74,6 +105,9 @@ public class Scene1Controller : MonoBehaviour{
             
         }
         isDialogAnimationNotGoingOn= false;
+        if(dialogo.decisiones.Count > 0){
+            toogleButtons();
+        }
     }
 
     public void ResizeFont(int newSize){

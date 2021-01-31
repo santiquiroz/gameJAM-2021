@@ -37,6 +37,7 @@ public class Dialog {
     public string actor;
     public float velocidad;
     public string musica;
+    public List<string> decisiones;
 }
 
 [System.Serializable]
