@@ -20,6 +20,11 @@ public class Scene1Controller : MonoBehaviour{
         nameText.text = dialogo.actor;
         StartCoroutine(AnimationText(dialogo.texto, dialogo.velocidad));
     } 
+     public void StartDialog2(Dialog dialogo){
+        dialogText.text = "";
+        nameText.text = dialogo.actor;
+        StartCoroutine(AnimationText(dialogo.texto, dialogo.velocidad));
+    } 
 
     void Start(){   
         sceneDialogs = new Dialogs();
@@ -32,19 +37,28 @@ public class Scene1Controller : MonoBehaviour{
                 case 1 :
                     StartDialog1(sceneDialogs.dialogos[0]);
                     isDialogFinished=false;
-                    break;                    
+                    break;
+                case 2 :
+                    StartDialog2(sceneDialogs.dialogos[1]);
+                    isDialogFinished=false;
+                    break;
                 default:
                     break;
             }
         }
     }
 
-    void nextButtonListener(){
+    void goToNextDialog(){
+        GameManager.instance.user.ultimo_dialogo ++;
+        isDialogFinished=true;
+    }
+
+    public void nextButtonListener(){
         if(isDialogAnimationNotGoingOn){
             isDialogAnimationNotGoingOn=false;
         }
         else{
-            isDialogFinished=true;
+            goToNextDialog();
         }
     }
 
