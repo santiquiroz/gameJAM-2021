@@ -31,7 +31,12 @@ public class SystemClass {
 
 [System.Serializable]
 public class Dialog {
-    public List<string> dialogo;
+    public int id;
+    public int escena;
+    public List<string> texto;
+    public string actor;
+    public float velocidad;
+    public string musica;
 }
 
 [System.Serializable]
@@ -39,9 +44,12 @@ public class Dialogs {
     public List<Dialog> dialogos;
 }
 
-
-
 public class GameManager : MonoBehaviour{
+    public static GameManager instance;
+ 
+    // make sure the constructor is private, so it can only be instantiated here
+    private GameManager() {
+    }
     public SystemClass system;
     public User user;
 
@@ -77,8 +85,11 @@ public class GameManager : MonoBehaviour{
     }
 
     void Start(){
-        DontDestroyOnLoad(this.gameObject);
-        LoadData();        
+        /* DontDestroyOnLoad(this.gameObject); */
+        instance = this;
+        LoadData();   
+        var aux = this.system.usuarios.FindAll(user => user.id == 1);
+        Debug.Log("User filtrado"+ aux[0].id);      
 
     }
 

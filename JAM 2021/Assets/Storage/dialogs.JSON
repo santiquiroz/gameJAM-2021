@@ -8,7 +8,7 @@
                 "como te sientes?"
             ],
             "actor": "doctor",
-            "velocidad": 1,
+            "velocidad": 1.0,
             "musica": "a"
         },
         {
@@ -18,7 +18,7 @@
                 "Me alegra!"
             ],
             "actor": "doctor",
-            "velocidad": 1,
+            "velocidad": 1.0,
             "musica": "a"
         },
         {
@@ -28,7 +28,7 @@
                 "Quien soy yo?"
             ],
             "actor": "doctor",
-            "velocidad": 1,
+            "velocidad": 1.0,
             "musica": "b"
         }
     ]
