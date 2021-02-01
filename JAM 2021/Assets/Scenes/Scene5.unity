@@ -299,7 +299,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1437049310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665d5717b87991a4a802a7de75732751, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fc23aebd24da8a4da2c13050773ca62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneDialogs:
@@ -310,16 +310,16 @@ MonoBehaviour:
   button2OptionText: {fileID: 2050510457}
   faceImage: {fileID: 2050510456}
   faceSprite:
-  - {fileID: 21300000, guid: 9cee99b92cb058a4c8e324b6b376309d, type: 3}
-  - {fileID: 21300000, guid: 8f4bdb6c0fc53724fa8529a7f6f34c6d, type: 3}
-  - {fileID: 21300000, guid: b23be2bfba4f05b459539c8941e8340e, type: 3}
-  - {fileID: 21300000, guid: b45dddca64437f6429cc51dade3656f8, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   nextButton: {fileID: 2050510455}
   option1Button: {fileID: 2050510454}
   option2Button: {fileID: 2050510453}
-  ugahButton: {fileID: 0}
-  pacoButton: {fileID: 0}
-  massimoButton: {fileID: 0}
+  flashbacks:
+  - {fileID: 21300000, guid: d749a5f813f7f7f4ea912ad1df7ce29c, type: 3}
+  flashbackImage: {fileID: 2050510445}
 --- !u!212 &1437049312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ PrefabInstance:
     - target: {fileID: 1226231414, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1437049311}
+      objectReference: {fileID: 0}
     - target: {fileID: 1802691416, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -451,11 +451,11 @@ PrefabInstance:
     - target: {fileID: 2021349208, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1437049311}
+      objectReference: {fileID: 0}
     - target: {fileID: 6216400755445353969, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1437049311}
+      objectReference: {fileID: 0}
     - target: {fileID: 7904497210412745757, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -586,6 +586,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
+--- !u!114 &2050510445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8802825485446945861, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
+  m_PrefabInstance: {fileID: 2050510444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2050510446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 49198265, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
