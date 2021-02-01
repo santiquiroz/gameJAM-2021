@@ -331,8 +331,8 @@
             "siguiente":[9]
         },
         {
-            "id": 9,
-            "escena": 4,
+            "id": 11,
+            "escena": 1,
             "texto": "¿A quién le crees?",
             "actor": "Yo",
             "velocidad": 1.0,

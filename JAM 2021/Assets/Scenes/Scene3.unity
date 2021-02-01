@@ -661,7 +661,6 @@ MonoBehaviour:
   option1Button: {fileID: 165466592}
   option2Button: {fileID: 165466591}
   flashbacks:
-  - {fileID: 21300000, guid: e65c3cabcf87703478eef3dbfb3e1096, type: 3}
   - {fileID: 21300000, guid: 02d2e7bf8a8240c4cb44b6b3f1e0cbfe, type: 3}
   - {fileID: 21300000, guid: 9dcf02c890f462d49ad1dd9559fcb8a7, type: 3}
   flashbackImage: {fileID: 165466585}

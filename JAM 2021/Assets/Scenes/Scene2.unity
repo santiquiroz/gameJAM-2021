@@ -405,6 +405,14 @@ PrefabInstance:
     - target: {fileID: 1226231414, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1641025295}
+    - target: {fileID: 1226231414, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MakeDesition
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226231414, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene2Controller, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1802691416, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
       propertyPath: m_IsActive
@@ -461,6 +469,14 @@ PrefabInstance:
     - target: {fileID: 2021349208, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1641025295}
+    - target: {fileID: 2021349208, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MakeDesition
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021349208, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Scene2Controller, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6216400755445353969, guid: b85e6ae02d085984da3ac4b1a07536dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

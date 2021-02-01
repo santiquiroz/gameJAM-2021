@@ -23,6 +23,7 @@ public class Scene4Controller : MonoBehaviour{
                 nameText.text = dialogo.actor;
                 ChangeMiniatureImage(dialogo.actor);
                 StartCoroutine(AnimationText(dialogo));
+                GameManager.instance.pacoCheck = true;
                 break;
             case 2:
                 dialogText.text = "";
@@ -197,10 +198,11 @@ public class Scene4Controller : MonoBehaviour{
     }
 
     private void ChangeMiniatureImage(string actorName){
+        faceImage.color = new Color(255, 255, 255, 255);
         if (actorName == "Ugah") faceImage.sprite = faceSprite[0];
         else if (actorName == "Paco") faceImage.sprite = faceSprite[1];
         else if (actorName == "Massimo") faceImage.sprite = faceSprite[2];
         else if (actorName == "Doctor") faceImage.sprite = faceSprite[3];
-        else faceImage.sprite = null;
+        else faceImage.color = new Color(0, 0, 0, 0);
     }
 }

@@ -49,6 +49,7 @@ public class Dialogs {
 public class GameManager : MonoBehaviour{
     public static GameManager instance;
 
+    public bool ugahCheck, pacoCheck, massimoCheck;
     public SystemClass system;
     public User user;
 

@@ -15,11 +15,10 @@ public class Scene1Controller : MonoBehaviour {
     public GameObject nextButton, option1Button, option2Button;
 
     //Botones finales
-    public GameObject ugahButton, pacoButton, massimoButton;
+    public GameObject ugahButton, pacoButton, massimoButton, ugahFinalButton, pacoFinalButton, massimoFinalButton;
 
     public void StartDialog(Dialog dialogo){
-        switch (dialogo.id)
-        {   
+        switch (dialogo.id){   
             case 1:
                 dialogText.text = "";
                 nameText.text = dialogo.actor;
@@ -78,6 +77,12 @@ public class Scene1Controller : MonoBehaviour {
                 dialogText.text = "";
                 nameText.text = dialogo.actor;
                 ChangeMiniatureImage(dialogo.actor);
+                StartCoroutine(NPCAnimationText(dialogo));
+                break;
+            case 11:
+                dialogText.text = "";
+                nameText.text = dialogo.actor;
+                ChangeMiniatureImage(dialogo.actor);
                 StartCoroutine(FinalAnimationText(dialogo));
                 break;
             default:
@@ -95,42 +100,49 @@ public class Scene1Controller : MonoBehaviour {
             switch(GameManager.instance.user.ultimo_dialogo){
                 case 1 :
                     StartDialog(sceneDialogs.dialogos[0]);
-                    isDialogFinished=false;
+                    isDialogFinished = false;
                     break;
                 case 2 :
                     StartDialog(sceneDialogs.dialogos[1]);
-                    isDialogFinished=false;
+                    isDialogFinished = false;
                     break;
                 case 3 :
                     StartDialog(sceneDialogs.dialogos[2]);
-                    isDialogFinished=false;
+                    isDialogFinished = false;
                     break;
                 case 4 :
                     StartDialog(sceneDialogs.dialogos[3]);
-                    isDialogFinished=false;
+                    isDialogFinished = false;
                     break;
                 case 5 :
                     StartDialog(sceneDialogs.dialogos[4]);
-                    isDialogFinished=false;
+                    isDialogFinished = false;
                     break;
                 case 6 :
                     StartDialog(sceneDialogs.dialogos[5]);
-                    isDialogFinished=false;
+                    GameObject.Find("Canvas").GetComponent<Canvas>().AppearNPC(true, true, true, false, true);
+                    isDialogFinished = false;
                     break;
                 case 7 :
                     StartDialog(sceneDialogs.dialogos[6]);
-                    isDialogFinished=false;
+                    isDialogFinished = false;
                     break;
                 case 8 :
                     StartDialog(sceneDialogs.dialogos[7]);
-                    isDialogFinished=false;
+                    isDialogFinished = false;
                     break;
                 case 9 :
                     StartDialog(sceneDialogs.dialogos[8]);
-                    isDialogFinished=false;
+                    isDialogFinished = false;
                     break;
                 case 10 :
-                    StartDialog(sceneDialogs.dialogos[9]);
+                    if(!GameManager.instance.ugahCheck || !GameManager.instance.pacoCheck || !GameManager.instance.massimoCheck){
+                        StartDialog(sceneDialogs.dialogos[9]);
+                    }
+                    else{
+                        GameObject.Find("Canvas").GetComponent<Canvas>().AppearNPC(true, true, true, false, true);
+                        StartDialog(sceneDialogs.dialogos[10]);
+                    }
                     isDialogFinished=false;
                     break;
                 default:
@@ -176,12 +188,8 @@ public class Scene1Controller : MonoBehaviour {
         isDialogAnimationNotGoingOn = true;
         foreach(char Character in text){
             dialogText.text = dialogText.text + Character;
-            /* yield return new WaitForSeconds(1 * Mathf.Abs(Mathf.Log(velocity / 2))); */
-            if(isDialogAnimationNotGoingOn){
-                yield return new WaitForSeconds(0.1f * velocity );
-            }
+            if(isDialogAnimationNotGoingOn) yield return new WaitForSeconds(0.1f * velocity);
             yield return new WaitForSeconds(0);
-            
         }
         isDialogAnimationNotGoingOn= false;
         if(dialogo.decisiones.Count > 0){
@@ -190,29 +198,45 @@ public class Scene1Controller : MonoBehaviour {
             ToogleButtons();
         }
     }
-    private void ToogleFinalButtons(){  
-        GameObject.Find("Canvas").GetComponent<Canvas>().AppearNPC(true,true,true,true,true); 
+
+    private void ToogleNPCButtons(bool ugahBool, bool pacoBool, bool massimoBool){  
         nextButton.SetActive(false);
-        ugahButton.SetActive(true);
-        pacoButton.SetActive(true);
-        massimoButton.SetActive(true);
+        ugahButton.SetActive(ugahBool);
+        pacoButton.SetActive(pacoBool);
+        massimoButton.SetActive(massimoBool);
     }
 
-    IEnumerator FinalAnimationText(Dialog dialogo){
+    private void ToogleFinaLButtons(){
+        nextButton.SetActive(false);
+        ugahFinalButton.SetActive(true);
+        pacoFinalButton.SetActive(true);
+        massimoFinalButton.SetActive(true);
+    }
+
+    IEnumerator NPCAnimationText(Dialog dialogo){
         string text = dialogo.texto;
         float velocity = dialogo.velocidad;
         isDialogAnimationNotGoingOn = true;
         foreach(char Character in text){
             dialogText.text = dialogText.text + Character;
-            /* yield return new WaitForSeconds(1 * Mathf.Abs(Mathf.Log(velocity / 2))); */
-            if(isDialogAnimationNotGoingOn){
-                yield return new WaitForSeconds(0.1f * velocity );
-            }
+            if(isDialogAnimationNotGoingOn) yield return new WaitForSeconds(0.1f * velocity);
             yield return new WaitForSeconds(0);
-            
         }
         isDialogAnimationNotGoingOn= false;        
-        ToogleFinalButtons();
+        ToogleNPCButtons(!GameManager.instance.ugahCheck, !GameManager.instance.pacoCheck, !GameManager.instance.massimoCheck);
+    }
+
+    IEnumerator FinalAnimationText(Dialog dialogo){ 
+        string text = dialogo.texto;
+        float velocity = dialogo.velocidad;
+        isDialogAnimationNotGoingOn = true;
+        foreach (char Character in text){
+            dialogText.text = dialogText.text + Character;
+            if (isDialogAnimationNotGoingOn) yield return new WaitForSeconds(0.1f * velocity);
+            yield return new WaitForSeconds(0);
+        }
+        isDialogAnimationNotGoingOn = false;
+        ToogleFinaLButtons();
     }
 
     public void ResizeFont(int newSize){
@@ -222,10 +246,11 @@ public class Scene1Controller : MonoBehaviour {
     }
 
     private void ChangeMiniatureImage(string actorName){
-        if(actorName == "Ugah") faceImage.sprite = faceSprite[0];
+        faceImage.color = new Color(255, 255, 255, 255);
+        if (actorName == "Ugah") faceImage.sprite = faceSprite[0];
         else if(actorName == "Paco") faceImage.sprite = faceSprite[1];
         else if(actorName == "Massimo") faceImage.sprite = faceSprite[2];
         else if(actorName == "Doctor") faceImage.sprite = faceSprite[3];
-        else faceImage.sprite = null;
+        else faceImage.color = new Color(0, 0, 0, 0);
     }
 }
