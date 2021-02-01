@@ -16,9 +16,6 @@ public class VideoController : MonoBehaviour{
         StartCoroutine(WaitVideo(5));
     }
 
-    void Update(){
-        
-    }
     IEnumerator WaitVideo(int time){
         canvas.SetActive(false);
         videoPlayer.Play();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(RectTransform))]
 public class CanvaslSizeAdapter : MonoBehaviour{
@@ -30,7 +31,36 @@ public class CanvaslSizeAdapter : MonoBehaviour{
                 child.GetComponent<CanvaslSizeAdapter>().ReSize();
             }
         }
-        if(this.gameObject.name == "PanelText") GameObject.Find("Player").GetComponent<Scene1Controller>().ResizeFont(
-            Mathf.RoundToInt((sizeObject.x / 224) * (sizeObject.y / 121) * 16));
+        if(GameObject.Find("Player") != null){
+            if (this.gameObject.name == "PanelText") GameObject.Find("Player").GetComponent<Scene1Controller>().ResizeFont(
+             Mathf.RoundToInt((sizeObject.x / 224) * (sizeObject.y / 121) * 16));
+        }
+        /*else if (GameObject.Find("Player2") != null){
+            if (this.gameObject.name == "PanelText") GameObject.Find("Player2").GetComponent<Scene2Controller>().ResizeFont(
+             Mathf.RoundToInt((sizeObject.x / 224) * (sizeObject.y / 121) * 16));
+        }
+        else if (GameObject.Find("Player3") != null){
+            if (this.gameObject.name == "PanelText") GameObject.Find("Player3").GetComponent<Scene3Controller>().ResizeFont(
+             Mathf.RoundToInt((sizeObject.x / 224) * (sizeObject.y / 121) * 16));
+        }*/
+        else if (GameObject.Find("Player4") != null){
+            if (this.gameObject.name == "PanelText"){
+                Debug.Log((sizeObject.x / 224) * (sizeObject.y / 121) * 16);
+                GameObject.Find("Player4").GetComponent<Scene4Controller>().ResizeFont(
+                    Mathf.RoundToInt((sizeObject.x / 224) * (sizeObject.y / 121) * 16));
+            }
+        }
+        /*else if (GameObject.Find("Player5") != null){
+            if (this.gameObject.name == "PanelText") GameObject.Find("Player5").GetComponent<Scene5Controller>().ResizeFont(
+             Mathf.RoundToInt((sizeObject.x / 224) * (sizeObject.y / 121) * 16));
+        }
+        else if (GameObject.Find("Player6") != null){
+            if (this.gameObject.name == "PanelText") GameObject.Find("Player6").GetComponent<Scene6Controller>().ResizeFont(
+             Mathf.RoundToInt((sizeObject.x / 224) * (sizeObject.y / 121) * 16));
+        }
+        else if (GameObject.Find("Player7") != null){
+            if (this.gameObject.name == "PanelText") GameObject.Find("Player7").GetComponent<Scene7Controller>().ResizeFont(
+             Mathf.RoundToInt((sizeObject.x / 224) * (sizeObject.y / 121) * 16));
+        }*/
     }
 }

@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour{
     }
 
     void Start(){
-        /* DontDestroyOnLoad(this.gameObject); */
+        DontDestroyOnLoad(this.gameObject);
         instance = this;
         LoadData();   
         var aux = this.system.usuarios.FindAll(user => user.id == 1);
