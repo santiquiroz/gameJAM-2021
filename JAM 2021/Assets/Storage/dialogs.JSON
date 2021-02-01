@@ -184,7 +184,7 @@
             "id": 2,
             "escena": 3,
             "texto": "¡¿Qué te hicieron?!",
-            "actor": "Yo",
+            "actor": "Massimo",
             "velocidad": 1.0,
             "musica": "b",
             "decisiones": ["¿Somos hermanos?", "¿Quién eres?"],
@@ -193,7 +193,7 @@
         {
             "id": 3,
             "escena": 3,
-            "texto": "Bueno… \nSi ser hermanos significa almorzar pizza… \n..Recoger la pasta del negocio … \n...Y encender a nuestros enemigos a bala en una sola tarde \nEntonces sí, somos hermano JAJAJA \n¡Ya sabes cómo es el negocio, socio! \n¡PIZZA, PASTA, BALA! \n… \nPerdón… Me dejé llevar",
+            "texto": "Bueno… \n Si ser hermanos significa almorzar pizza… \n ..Recoger la pasta del negocio … \n...Y encender a nuestros enemigos a bala en una sola tarde \nEntonces sí, somos hermano JAJAJA \n¡Ya sabes cómo es el negocio, socio! \n¡PIZZA, PASTA, BALA! \n… \nPerdón… Me dejé llevar",
             "actor": "Massimo",
             "velocidad": 1.0,
             "musica": "b",
@@ -203,7 +203,7 @@
         {
             "id": 4,
             "escena": 3,
-            "texto": "¿Quién soy yo? \n¡Yo soy Massimo Abelardo! /nJefe de jefes de esta ciudad \nSoy tu amigo y gran colega.",
+            "texto": "¿Quién soy yo? \n ¡Yo soy Massimo Abelardo! /nJefe de jefes de esta ciudad \nSoy tu amigo y gran colega.",
             "actor": "Massimo",
             "velocidad": 1.0,
             "musica": "b",
@@ -223,7 +223,7 @@
         {
             "id": 6,
             "escena": 3,
-            "texto": "Ya veo… \nDéjame contarte una historia",
+            "texto": "Ya veo… \n Déjame contarte una historia",
             "actor": "Massimo",
             "velocidad": 1.0,
             "musica": "b",
@@ -370,7 +370,7 @@
             "siguiente":[]
         },
         {
-            "id": 2,
+            "id": 3,
             "escena": 6,
             "texto": "Los hermanos Pizza, Pasta, Bala se separaron \nY ya sabes cómo es el negocio, socio \nLa vida es un ciclo \nY lo que no sirve ya no lo reciclo",
             "velocidad": 1.0,
